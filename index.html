@@ -4,5 +4,13 @@
 <script>
 fetch('images.json')
     .then(r=>r.json())
-    .then(a=>location.replace(a[(Math.random()*a.length)|0]));
+    .then(a=>{
+        let t=3500;
+        (function go(){
+            let u=a[(Math.random()*a.length)|0],i=new Image(),s=setTimeout(go,t);
+            i.onload=()=>{clearTimeout(s);location.replace(u)};
+            i.onerror=()=>{clearTimeout(s);go()};
+            i.src=u;
+        })();
+    });
 </script>
