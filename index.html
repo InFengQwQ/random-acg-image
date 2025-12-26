@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>API</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="random.js" defer></script>
-</head>
-<body>
-    <noscript>
-        <p>请启用JavaScript以使用随机图片API</p>
-    </noscript>
-</body>
-</html>
+<meta charset="UTF-8">
+<title>Random Image</title>
+<script>
+fetch('images.json')
+    .then(r=>r.json())
+    .then(a=>location.replace(a[(Math.random()*a.length)|0]));
+</script>
