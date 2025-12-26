@@ -1,7 +1,7 @@
 Minimal random image redirect.
 
 - Data: images.json (array of direct image URLs)
-- Page: index.html (inline script fetches JSON and redirects)
+- Page: index.html (fetches JSON and redirects)
 
 Update images.json to add/remove images. Deploy as static site.
 
